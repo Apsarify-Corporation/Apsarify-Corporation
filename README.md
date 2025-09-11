@@ -7,7 +7,7 @@
 ## 🚀 Project Overview
 
 - **Website Type:** Corporate / Tech Portfolio  
-- **Role:** CEO & Lead Developer  
+- **Role:** CEO & Lead Developer - Abhinandan Subedi
 - **Tech Stack:** React.js, Next.js, TailwindCSS, Node.js, Express, MongoDB, Docker  
 - **UI/UX Tools:** Figma, Photoshop  
 
