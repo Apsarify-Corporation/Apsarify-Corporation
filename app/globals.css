@@ -2,3 +2,9 @@
 .bg-1 {
   background-image: url('/images/bg.jpg');
 }
+.hidesidemenu{
+  right: -100vw;
+}
+.opensidemenu{
+  right: -100%;
+}
