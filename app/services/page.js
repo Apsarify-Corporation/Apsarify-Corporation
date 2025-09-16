@@ -39,7 +39,7 @@ const Service = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-gradient-to-b from-black to-gray-900 min-h-[90vh] text-center font-bold px-2 py-10 flex flex-col items-center">
+    <div className="bg-gradient-to-b pt-15 from-black to-gray-900 h-screen text-center font-bold px-2 py-10 flex flex-col items-center">
       <p className="text-sm font-light fadein text-gray-400 pt-4">Who we are</p>
       <h3 className="text-2xl md:text-3xl font-normal fadein mt-2 mb-8">
         <span className="block my-5 fadein font-thin max-w-3xl mx-auto">

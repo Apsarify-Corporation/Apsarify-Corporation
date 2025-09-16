@@ -61,7 +61,7 @@ const Products = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-gradient-to-b from-black p-5 to-gray-900 min-h-[90vh] text-center font-bold overflow-y-hidden">
+    <div className="bg-gradient-to-b pt-15 from-black h-screen p-5 to-gray-900 text-center font-bold overflow-y-hidden">
       <p className="text-sm font-light fadein text-gray-400 pt-10">
         Our Products
       </p>

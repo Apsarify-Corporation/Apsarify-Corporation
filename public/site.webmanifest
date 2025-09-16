@@ -1,0 +1,16 @@
+{
+  "name": "Apsarify Corporation",
+  "short_name": "Apsarify",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00FFCC"
+}

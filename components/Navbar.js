@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="flex px-5 py-5 w-full items-center justify-between relative z-50"
+      className="flex px-5 py-5 w-full  items-center justify-between fixed z-50"
       ref={nav}
       style={{ opacity: 0, transform: "translateY(-50px)" }}
     >

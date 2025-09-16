@@ -34,7 +34,7 @@ export default function Home() {
   }, [pathname]);
 
   return (
-    <div className="bg-1 h-[90.3vh] w-full bg-no-repeat bg-cover flex flex-col py-13 font-bold overflow-hidden relative">
+    <div className="bg-1 h-screen pt-25 w-full bg-no-repeat bg-cover flex flex-col py-13 font-bold overflow-hidden relative">
       {/* Video Background */}
       <video
         src="/overlays/overlay.mp4"

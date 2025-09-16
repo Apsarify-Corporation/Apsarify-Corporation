@@ -65,7 +65,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-[90vh] bg-gradient-to-b from-black to-gray-900 flex flex-col items-center justify-center px-4 py-10">
+    <div className="pt-15 bg-gradient-to-b from-black h-screen to-gray-900 flex flex-col items-center justify-center px-4 py-10">
       {/* Title */}
       <div className="portfolio-fade portfolio-title opacity-0 flex flex-col items-center mb-12">
         <span className="text-xs text-gray-400 tracking-widest mb-2">

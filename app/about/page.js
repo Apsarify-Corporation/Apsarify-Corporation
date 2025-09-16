@@ -32,7 +32,7 @@ const About = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-gradient-to-b from-black to-gray-900 min-h- p-5 [90vh] text-4xl font-bold text-center sm:overflow-y-hidden">
+    <div className="bg-gradient-to-b pt-15 from-black to-gray-900 min-h- p-5 [90vh] text-4xl font-bold text-center sm:overflow-y-hidden">
       <p className="text-sm font-light fadein text-gray-400 pt-8">Who we are</p>
       <h3 className="text-2xl md:text-3xl font-normal fadein">
         <span className="md:w-[40%] w-[90%] mx-auto block my-5 fadein font-thin">

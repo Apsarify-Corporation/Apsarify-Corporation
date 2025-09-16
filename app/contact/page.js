@@ -38,7 +38,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-[90vh]  bg-gradient-to-b from-black to-gray-900 flex items-center justify-center px-4 py-10">
+    <div className=" pt-15 h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-6xl p-5 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left: Contact Form */}
         <div className="contact-fade bg-[#232427] rounded-xl p-8 flex flex-col justify-center shadow-2xl border border-[#33353a]">
