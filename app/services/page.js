@@ -43,7 +43,8 @@ const Service = () => {
       <p className="text-sm font-light fadein text-gray-400 pt-4">Who we are</p>
       <h3 className="text-2xl md:text-3xl font-normal fadein mt-2 mb-8">
         <span className="block my-5 fadein font-thin max-w-3xl mx-auto">
-          YOUR ASPIRATION, OUR EXPERTISE: TAILORED SERVICES FOR UNMATCHED EXCELLENCE.
+          YOUR ASPIRATION, OUR EXPERTISE: TAILORED SERVICES FOR UNMATCHED
+          EXCELLENCE.
         </span>
       </h3>
       <div className="w-full max-w-4xl mx-auto flex flex-col gap-4">
@@ -51,7 +52,9 @@ const Service = () => {
           <React.Fragment key={service.number}>
             <div className="flex flex-col sm:flex-row justify-between items-center bg-[#232427] rounded-xl px-4 py-5 fadein shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 items-center text-center sm:text-left">
-                <span className="text-3xl sm:text-4xl text-blue-400 font-extrabold">{service.number}</span>
+                <span className="text-3xl sm:text-4xl text-blue-400 font-extrabold">
+                  {service.number}
+                </span>
                 <h4
                   className={
                     "text-lg sm:text-2xl font-semibold bg-gradient-to-r px-2 from-white to-[#fafafa30] bg-clip-text text-transparent " +
