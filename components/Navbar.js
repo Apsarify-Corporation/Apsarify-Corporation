@@ -1,81 +1,84 @@
 "use client";
 
-import { Manrope, Outfit, Poppins, Syne, Audiowide } from "next/font/google";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { Poppins, Audiowide } from "next/font/google";
+import gsap from "gsap";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-});
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
 });
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+
 const audiowide = Audiowide({ subsets: ["latin"], weight: ["400"] });
 
-const Navbar = () => {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const nav = useRef(null);
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(nav.current, {
+      opacity: 1,
+      y: 0,
+      delay: 1,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }, []);
+
+  // Squeezing effect for sidebar using gsap.to
+  useEffect(() => {
+    if (isMenuOpen && sidebarRef.current) {
+      gsap.to(sidebarRef.current, {
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out",
+        transformOrigin: "right",
+      });
+    } else if (sidebarRef.current) {
+      gsap.to(sidebarRef.current, {
+        scaleX: 0.8,
+        opacity: 0.7,
+        duration: 0.2,
+        ease: "power2.in",
+        transformOrigin: "right",
+      });
+    }
+  }, [isMenuOpen]);
 
   return (
-    <nav className="flex px-5 py-5 items-center justify-between">
+    <nav
+      className="flex px-5 py-5 w-full items-center justify-between relative z-50"
+      ref={nav}
+      style={{ opacity: 0, transform: "translateY(-50px)" }}
+    >
       {/* Logo */}
-      <h1 className={"font-[400] text-xl " + audiowide.className}>
+      <h1 className={`font-[400] text-xl ${audiowide.className}`}>
         <Link href="/">Apsarify</Link>
       </h1>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-10 w-250 justify-between">
-        <ul className={"flex gap-10 font-light " + poppins.className}>
-          <li className="w-15 flex text-center align-center">
-            <Link href="/" className="duration-1000 text-sm hover:font-[500]">
-              Home
-            </Link>
+      <div className="hidden md:flex items-center gap-10">
+        <ul className={`flex gap-10 font-light ${poppins.className}`}>
+          <li className="w-15">
+            <Link href="/">Home</Link>
           </li>
-          <li className="w-15 flex text-center align-center">
-            <Link
-              href="/about"
-              className="duration-1000 text-sm hover:font-[500]"
-            >
-              About
-            </Link>
+          <li className="w-15">
+            <Link href="/about">About</Link>
           </li>
-          <li className="w-15 flex text-center align-center">
-            <Link
-              href="/services"
-              className="duration-1000 text-sm hover:font-[500]"
-            >
-              Services
-            </Link>
+          <li className="w-15">
+            <Link href="/services">Services</Link>
           </li>
-          <li className="w-15 flex text-center align-center">
-            <Link
-              href="/products"
-              className="duration-1000 text-sm hover:font-[500]"
-            >
-              Products
-            </Link>
+          <li className="w-15">
+            <Link href="/products">Products</Link>
           </li>
-          <li className="w-20 flex text-center align-center">
-            <Link
-              href="/contact"
-              className="duration-1000 text-sm hover:font-[500]"
-            >
-              Contact Us
-            </Link>
+          <li className="w-15">
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
-
         <button className="text-sm cursor-pointer border border-white px-4 py-2 rounded-2xl hover:bg-white hover:text-black transition">
           Work With Us
         </button>
@@ -84,7 +87,8 @@ const Navbar = () => {
       {/* Mobile Hamburger */}
       <button
         onClick={() => setIsMenuOpen(true)}
-        className="md:hidden text-2xl"
+        className="md:hidden text-2xl z-50"
+        aria-label="Open menu"
       >
         <FaBars />
       </button>
@@ -99,25 +103,29 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-screen w-72 bg-black text-white z-50 transform transition-transform duration-500 ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        ref={sidebarRef}
+        className={`fixed top-0 right-0 h-screen w-72 bg-black text-white z-50 flex flex-col md:hidden`}
+        style={{
+          transformOrigin: "right",
+          display: isMenuOpen ? "flex" : "none", // Hide when closed
+        }}
       >
-        {/* Close button */}
-        <div className="flex justify-end p-4">
-          <button onClick={() => setIsMenuOpen(false)}>
+        {/* Close Button */}
+        <div className="flex justify-center mt-10 p-4">
+          <button onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
             <FaTimes size={24} />
           </button>
         </div>
-
         {/* Sidebar Content */}
         <div
-          className={
-            "flex flex-col items-center justify-center h-full gap-10 " +
-            poppins.className
-          }
+          className={`flex flex-col items-center justify-center h-full gap-10 ${poppins.className}`}
         >
           <ul className="flex flex-col items-center gap-8 text-lg font-[500]">
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
             <li>
               <Link href="/about" onClick={() => setIsMenuOpen(false)}>
                 About
@@ -135,18 +143,18 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                Contact Us
+                Contact
               </Link>
             </li>
           </ul>
-
-          <button className="mt-10 text-sm border border-white px-4 py-2 rounded-2xl hover:bg-white hover:text-black transition">
+          <button
+            className="mt-10 text-sm border border-white px-4 py-2 rounded-2xl hover:bg-white hover:text-black transition"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Work With Us
           </button>
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
