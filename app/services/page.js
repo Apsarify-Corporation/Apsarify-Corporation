@@ -50,9 +50,9 @@ const Service = () => {
       <div className="w-full max-w-4xl mx-auto flex flex-col gap-4">
         {services.map((service, idx) => (
           <React.Fragment key={service.number}>
-            <div className="flex flex-col sm:flex-row justify-between items-center bg-[#232427] rounded-xl px-4 py-5 fadein shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div className="flex flex-col sm:flex-row justify-between items-center rounded-xl px-4 py-5 fadein shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 items-center text-center sm:text-left">
-                <span className="text-3xl sm:text-4xl text-blue-400 font-extrabold">
+                <span className="text-3xl sm:text-4xl font-extrabold">
                   {service.number}
                 </span>
                 <h4
