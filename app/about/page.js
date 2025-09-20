@@ -36,11 +36,24 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Us | Apsarify</title>
+        <title>
+          About Apsarify – Digital Agency Nepal | Web & Cloud Experts
+        </title>
         <meta
           name="description"
-          content="Learn about Apsarify: Our mission, vision, and the team driving innovation in web, cloud, and AI solutions."
+          content="Discover Apsarify, a Kathmandu-based digital agency delivering web, cloud, and AI solutions for businesses in Nepal and worldwide."
         />
+        <meta
+          property="og:title"
+          content="About Apsarify – Digital Agency Nepal"
+        />
+        <meta
+          property="og:description"
+          content="Discover Apsarify, a Kathmandu-based digital agency delivering web, cloud, and AI solutions for businesses in Nepal and worldwide."
+        />
+        <meta property="og:image" content="/images/ABOUT.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aps.org.np/about" />
       </Head>
       <div className="bg-gradient-to-b pt-10 from-black to-gray-900 min-h-screen px-5 text-4xl font-bold text-center sm:overflow-y-hidden">
         <p className="text-sm font-light fadein text-gray-400 pt-8">

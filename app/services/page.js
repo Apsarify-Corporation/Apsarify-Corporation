@@ -43,11 +43,24 @@ const Service = () => {
   return (
     <>
       <Head>
-        <title>Services | Apsarify</title>
+        <title>
+          Web Services & App Development – Apsarify | Kathmandu, Nepal
+        </title>
         <meta
           name="description"
-          content="Explore Apsarify's full range of services: Web development, cloud solutions, AI, UI/UX, and more for your business growth."
+          content="Apsarify offers web development, app development, cloud, and AI services for businesses in Nepal. Boost your digital presence with our expert team."
         />
+        <meta
+          property="og:title"
+          content="Web Services & App Development – Apsarify"
+        />
+        <meta
+          property="og:description"
+          content="Apsarify offers web development, app development, cloud, and AI services for businesses in Nepal. Boost your digital presence with our expert team."
+        />
+        <meta property="og:image" content="/images/ABOUT.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aps.org.np/services" />
       </Head>
       <div className="bg-gradient-to-b pt-15 from-black to-gray-900 h-screen text-center font-bold px-2 py-10 flex flex-col items-center">
         <p className="text-sm font-light fadein text-gray-400 pt-4">

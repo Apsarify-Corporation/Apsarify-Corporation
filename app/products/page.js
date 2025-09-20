@@ -64,11 +64,19 @@ const Products = () => {
   return (
     <>
       <Head>
-        <title>Products | Apsarify</title>
+        <title>Digital Products – Apsarify | Software Solutions Nepal</title>
         <meta
           name="description"
-          content="Discover Apsarify's products: Secure, flexible, and innovative solutions for your digital transformation."
+          content="Explore Apsarify's digital products: secure, scalable, and innovative software solutions for businesses in Nepal and globally."
         />
+        <meta property="og:title" content="Digital Products – Apsarify" />
+        <meta
+          property="og:description"
+          content="Explore Apsarify's digital products: secure, scalable, and innovative software solutions for businesses in Nepal and globally."
+        />
+        <meta property="og:image" content="/images/ABOUT.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aps.org.np/products" />
       </Head>
       <div className="bg-gradient-to-b pt-15 from-black h-screen p-5 to-gray-900 text-center font-bold overflow-y-hidden">
         <p className="text-sm font-light fadein text-gray-400 pt-10">

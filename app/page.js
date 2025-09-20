@@ -38,12 +38,23 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Apsarify — Elevate Your Vision, Ignite Tomorrow&#39;s Innovation
+          Web Development Kathmandu – Apsarify | Digital Agency Nepal
         </title>
         <meta
           name="description"
-          content="Apsarify: Full-stack web, cloud, and AI solutions. Elevate your business with innovative technology and expert services."
+          content="Apsarify is a leading digital agency in Nepal, specializing in web development, cloud, and AI solutions for businesses in Kathmandu and beyond."
         />
+        <meta
+          property="og:title"
+          content="Web Development Kathmandu – Apsarify"
+        />
+        <meta
+          property="og:description"
+          content="Apsarify is a leading digital agency in Nepal, specializing in web development, cloud, and AI solutions for businesses in Kathmandu and beyond."
+        />
+        <meta property="og:image" content="/images/ABOUT.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aps.org.np/" />
       </Head>
       <div className="bg-1 h-screen pt-25 w-full bg-no-repeat bg-cover flex flex-col py-13 font-bold overflow-hidden relative">
         {/* Video Background */}
