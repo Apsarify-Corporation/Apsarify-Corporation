@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Logo from "./Logo";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Poppins, Audiowide } from "next/font/google";
@@ -56,9 +57,18 @@ export default function Navbar() {
       style={{ opacity: 0, transform: "translateY(-50px)" }}
     >
       {/* Logo */}
-      <h1 className={`font-[400] text-xl ${audiowide.className}`}>
-        <Link href="/">Apsarify</Link>
-      </h1>
+      <Link
+        href="/"
+        className="flex items-center gap-2 group"
+        aria-label="Apsarify Home"
+      >
+        <Logo className="w-10 h-10" />
+        <span
+          className={`font-[400] text-xl ${audiowide.className} group-hover:text-blue-400 transition-colors`}
+        >
+          Apsarify
+        </span>
+      </Link>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-10">

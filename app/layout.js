@@ -23,11 +23,6 @@ export const metadata = {
   ],
   authors: [{ name: "Abhinandan Subedi", url: "https://aps.org.np" }],
   creator: "Abhinandan Subedi",
-  viewport: { width: "device-width", initialScale: 1, minimumScale: 1 },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
 
   // Open Graph (used by Facebook, LinkedIn, etc.)
   openGraph: {

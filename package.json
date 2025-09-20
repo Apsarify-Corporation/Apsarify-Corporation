@@ -23,5 +23,18 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "tailwindcss": "^4.1.13"
-  }
+  },
+  "description": "**Apsarify** is the official website of **Apsarify Corporation**, showcasing our services, projects, and tech expertise. Built with a modern full-stack approach, the site is optimized for performance, scalability, and user experience.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apsarify-Corporation/Apsarify-Corporation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Apsarify-Corporation/Apsarify-Corporation/issues"
+  },
+  "homepage": "https://github.com/Apsarify-Corporation/Apsarify-Corporation#readme"
 }
