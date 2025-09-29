@@ -57,15 +57,15 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Apsarify is a leading digital agency, specializing in web development, cloud, and AI solutions for businesses in Nepal and beyond."
+          content="Apsarify is a global digital agency delivering high-performance web, cloud, and AI solutions for forward-thinking businesses worldwide."
         />
         <meta
           property="og:title"
-          content="Web Development Kathmandu – Apsarify"
+          content="Web Development & Cloud Innovation – Apsarify"
         />
         <meta
           property="og:description"
-          content="Apsarify is a leading digital agency in Nepal, specializing in web development, cloud, and AI solutions for businesses in Kathmandu and beyond."
+          content="Apsarify is a global digital agency delivering high-performance web, cloud, and AI solutions for forward-thinking businesses worldwide."
         />
         <meta property="og:image" content="/images/ABOUT.png" />
         <meta property="og:type" content="website" />
@@ -100,8 +100,8 @@ export default function Home() {
 
         {/* Subtitle */}
         <p className="hero-subtitle z-10 font-light text-lg sm:text-xl md:text-2xl text-center mt-4 mb-8 max-w-3xl mx-auto opacity-0 text-white/90">
-          Crafting digital excellence for Nepali businesses and beyond with web,
-          cloud, and AI solutions.
+          Empowering global brands with cutting-edge web, cloud, and AI
+          solutions.
         </p>
 
         {/* Call To Actions */}
