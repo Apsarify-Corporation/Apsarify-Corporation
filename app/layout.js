@@ -5,32 +5,45 @@ import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: {
-    default: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
-    template: "%s | APSARIFY",
+    default:
+      "APSARIFY.tech — Elevate Your Vision | Web, Cloud, AI & UI/UX Engineering",
+    template: "%s | APSARIFY.tech",
   },
   description:
-    "APSARIFY — Elevate your vision. We craft Web, Cloud, AI & UI/UX solutions that ignite tomorrow's innovation.",
+    "APSARIFY.tech is a Nepal-based technology partner delivering high-performance Web Apps, Cloud architecture, AI integration, Mobile & UI/UX solutions that scale globally.",
   keywords: [
     "Apsarify",
+    "Apsarify.tech",
     "Apsarify Corporation",
-    "web development",
-    "full-stack",
-    "Next.js",
-    "React",
-    "Node.js",
-    "Django",
-    "tech",
+    "software company Nepal",
+    "Nepal tech company",
+    "web development Nepal",
+    "custom software development",
+    "cloud migration",
+    "DevOps automation",
+    "AI integration",
+    "RAG applications",
+    "UI UX design",
+    "Next.js development",
+    "React engineering",
+    "Node.js backend",
+    "SaaS development",
+    "microservices",
+    "APIs",
+    "headless commerce",
+    "digital transformation",
   ],
-  authors: [{ name: "Abhinandan Subedi", url: "https://apsarify.tech" }],
-  creator: "Abhinandan Subedi",
+  authors: [{ name: "Apsarify Team", url: "https://apsarify.tech" }],
+  creator: "Apsarify Team",
 
   // Open Graph (used by Facebook, LinkedIn, etc.)
   openGraph: {
-    title: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
+    title:
+      "APSARIFY.tech — Elevate Your Vision | Web, Cloud, AI & AI Solutions",
     description:
-      "Elevate your vision with APSARIFY. We build scalable Web, Cloud, AI & UI/UX solutions.",
+      "APSARIFY.tech builds scalable Web, Cloud, AI, Mobile & UI/UX platforms that accelerate digital transformation.",
     url: "https://apsarify.tech/",
-    siteName: "APSARIFY",
+    siteName: "APSARIFY.tech",
     images: [
       {
         url: "https://apsarify.tech/images/ABOUT.png",
@@ -43,15 +56,14 @@ export const metadata = {
     type: "website",
   },
 
-  // // Twitter card
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
-  //   description:
-  //     "Elevate your vision with APSARIFY. We build scalable Web, Cloud, AI & UI/UX solutions.",
-  //   images: ["https://apsarify.tech/og-image.png"], // <-- same OG image recommended
-  //   creator: "@YourTwitterHandle", // <-- replace with your Twitter handle or remove
-  // },
+  twitter: {
+    card: "summary_large_image",
+    title: "APSARIFY.tech — Elevate Your Vision",
+    description:
+      "Web, Cloud, AI, Mobile & UI/UX engineering partner from Nepal delivering global-ready platforms.",
+    images: ["https://apsarify.tech/images/ABOUT.png"],
+    creator: "@apsarify", // update if official handle differs
+  },
 
   // Favicons / site icons
   icons: {
@@ -98,20 +110,95 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "APSARIFY",
-              url: "https://apsarify.tech/",
-              logo: "https://apsarify.tech/favicon.png",
-              sameAs: [
-                "https://www.facebook.com/your-profile",
-                "https://www.instagram.com/your-profile",
-              ],
-              contactPoint: [
+              "@graph": [
                 {
-                  "@type": "ContactPoint",
-                  telephone: "",
-                  contactType: "customer support",
-                  areaServed: "NP",
+                  "@type": "Organization",
+                  name: "APSARIFY.tech",
+                  url: "https://apsarify.tech/",
+                  logo: "https://apsarify.tech/favicon.png",
+                  sameAs: [
+                    "https://www.facebook.com/your-profile",
+                    "https://www.instagram.com/your-profile",
+                  ],
+                  contactPoint: [
+                    {
+                      "@type": "ContactPoint",
+                      telephone: "",
+                      contactType: "customer support",
+                      areaServed: "NP",
+                    },
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  name: "APSARIFY.tech",
+                  url: "https://apsarify.tech/",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://apsarify.tech/?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://apsarify.tech/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Services",
+                      item: "https://apsarify.tech/services",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: "Products",
+                      item: "https://apsarify.tech/products",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 4,
+                      name: "Portfolio",
+                      item: "https://apsarify.tech/portfolio",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 5,
+                      name: "Contact",
+                      item: "https://apsarify.tech/contact",
+                    },
+                  ],
+                },
+                {
+                  "@type": "ItemList",
+                  name: "Core Products",
+                  itemListElement: [
+                    {
+                      "@type": "Product",
+                      name: "Apsarify Commerce",
+                      url: "https://apsarify.tech/products",
+                    },
+                    {
+                      "@type": "Product",
+                      name: "Apsarify CMS",
+                      url: "https://apsarify.tech/products",
+                    },
+                    {
+                      "@type": "Product",
+                      name: "Apsarify AI Studio",
+                      url: "https://apsarify.tech/products",
+                    },
+                    {
+                      "@type": "Product",
+                      name: "Apsarify Cloud Edge",
+                      url: "https://apsarify.tech/products",
+                    },
+                  ],
                 },
               ],
             }),
