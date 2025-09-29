@@ -5,6 +5,7 @@ import Head from "next/head";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { Poppins } from "next/font/google";
+import { FaLightbulb, FaHandshake, FaLeaf } from "react-icons/fa";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,17 +17,72 @@ const About = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    gsap.set(".fadein", { opacity: 0, y: 50 });
+    // Ordered animations: overline -> title -> media -> body -> badges -> stats
+    gsap.set(
+      [
+        ".about-overline",
+        ".about-title",
+        ".about-media",
+        ".about-body",
+        ".about-badges > *",
+        ".about-stats .stat-card",
+      ],
+      { opacity: 0, y: 40 }
+    );
 
     tl.current && tl.current.kill();
-    tl.current = gsap.timeline({ delay: 1.5 });
-    tl.current.to(".fadein", {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out",
-      stagger: 0.3,
-    });
+    tl.current = gsap.timeline({ delay: 0.8 });
+    tl.current
+      .to(".about-overline", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power3.out",
+      })
+      .to(
+        ".about-title",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "+=0.05"
+      )
+      .to(".about-media", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+      })
+      .to(
+        ".about-body",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.3"
+      )
+      .to(".about-badges > *", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.12,
+      })
+      .to(
+        ".about-stats .stat-card",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.08,
+        },
+        "+=0.1"
+      );
 
     return () => {
       tl.current && tl.current.kill();
@@ -53,68 +109,126 @@ const About = () => {
         />
         <meta property="og:image" content="/images/ABOUT.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aps.org.np/about" />
+        <meta property="og:url" content="https://apsarify.tech/about" />
       </Head>
-      <div className="bg-gradient-to-b pt-10 from-black to-gray-900 min-h-screen px-5 text-4xl font-bold text-center sm:overflow-y-hidden">
-        <p className="text-sm font-light fadein text-gray-400 pt-8">
-          Who we are
-        </p>
-        <h3 className="text-xl md:text-3xl font-normal fadein">
-          <span className="md:w-[40%] w-[90%] mx-auto block my-1 fadein font-thin">
-            APSARIFY BEGINNINGS: UNVEILING OUR ESSENCE, CRAFTING FUTURES WITH
-            EXCELLENCE.
-          </span>
-        </h3>
-        <div className="fadein flex flex-col lg:flex-row w-[95%] md:w-[80%] mx-auto my-5 text-sm font-light gap-8 items-center">
-          <div className="w-full lg:w-1/2 pr-0 lg:pr-5 mb-6 lg:mb-0">
-            <Image
-              src="/images/ABOUT.png"
-              alt="Apsarify Team Working Together"
-              className="w-full rounded-xl object-cover"
-              width={500}
-              height={300}
-              priority={false}
+      <div className="relative h-screen overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black px-4 sm:px-5 pt-20 sm:pt-24 pb-4 sm:pb-6 text-white grid grid-rows-[auto,1fr,auto]">
+        {/* Decorative gradients */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-32 right-10 h-56 w-56 rounded-full bg-violet-600/10 blur-3xl"
+        />
+
+        {/* Overline */}
+        <div className="about-overline text-center">
+          <p className="text-xs sm:text-sm font-light text-gray-300 tracking-wider uppercase">
+            Who we are
+          </p>
+          <span className="mt-2 block h-[2px] w-14 sm:w-16 mx-auto bg-gradient-to-r from-blue-400/70 to-violet-400/70 rounded" />
+        </div>
+
+        {/* Title */}
+        <h1 className="about-title text-2xl sm:text-3xl md:text-5xl font-extrabold text-center mt-3 sm:mt-6 bg-gradient-to-r from-white via-blue-200 to-violet-200 bg-clip-text text-transparent leading-tight">
+          Building Solutions of Your Problems
+        </h1>
+
+        {/* Content */}
+        <section className="min-h-0 overflow-hidden grid grid-cols-2 gap-4 sm:gap-8 items-stretch max-w-6xl mx-auto mt-5 sm:mt-8">
+          {/* Media */}
+          <div className="about-media relative col-span-2 md:col-span-1 min-h-[240px] sm:min-h-[300px] md:h-full">
+            <div
+              aria-hidden
+              className="absolute -inset-1 rounded-xl bg-gradient-to-br from-blue-500/20 to-violet-500/20 blur-md"
             />
+            <div className="relative h-full rounded-xl overflow-hidden border border-white/10 bg-white/5">
+              <Image
+                src="/images/ABOUT.png"
+                alt="Apsarify team collaborating on a project"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                priority={false}
+              />
+            </div>
           </div>
+
+          {/* Body */}
           <div
-            className={`w-full lg:w-1/2 text-left pl-0 lg:pl-5 ${poppins.className}`}
+            className={`about-body min-h-0 overflow-hidden ${poppins.className} col-span-2 md:col-span-1`}
           >
-            <h5 className="text-xl font-normal mb-4">
-              Empowering Progress: Our Story, Your Journey.
-            </h5>
-            <p className="my-5 font-thin">
+            <h2 className="text-base sm:text-lg md:text-2xl font-semibold">
+              Empowering progress through technology
+            </h2>
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-300 font-light">
               Apsarify is a team of innovators and problem-solvers dedicated to
-              building technology that shapes the future. We value integrity,
-              excellence, and collaboration.
+              building technology that shapes the future. We value
+              <span className="font-medium text-white"> integrity</span>,
+              <span className="font-medium text-white"> excellence</span>, and
+              <span className="font-medium text-white"> collaboration</span>.
             </p>
-            <p className="my-5 font-thin">
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-300 font-light">
               Our diverse experts deliver creative solutions and foster a
               culture of continuous learning and growth.
             </p>
-            <p className="my-5 font-thin">
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-300 font-light">
               We strive to make a positive impact for our clients and society
               through sustainable, ethical practices.
             </p>
+
+            {/* Values badges */}
+            <div className="about-badges mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs sm:text-sm bg-white/5 border border-white/10">
+                <FaHandshake className="text-blue-300" aria-hidden /> Integrity
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs sm:text-sm bg-white/5 border border-white/10">
+                <FaLightbulb className="text-yellow-300" aria-hidden />{" "}
+                Excellence
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs sm:text-sm bg-white/5 border border-white/10">
+                <FaLeaf className="text-emerald-300" aria-hidden /> Sustainable
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="fadein align-middle text-center justify-center p-3 w-[98%] md:w-[80%] mx-auto h-auto text-sm font-light grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 bg-black rounded-xl">
-          <div className="border-gray-600 border-b md:border-b-0 md:border-r align-middle text-center justify-center flex flex-col py-4">
-            <span className="font-bold text-3xl">400+</span>
-            <h6 className="font-thin text-sm mt-2">Project Completed</h6>
+        </section>
+
+        {/* Stats */}
+        <section className="about-stats grid grid-cols-2 md:grid-cols-4 place-items-center gap-3 sm:gap-5 max-w-6xl mx-auto mt-4 sm:mt-6">
+          <div className="stat-card rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-3 sm:p-5 text-center flex flex-col items-center justify-center min-h-24 sm:min-h-28 w-full">
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              400+
+            </span>
+            <span className="block mt-1 sm:mt-2 text-xs sm:text-sm text-gray-300">
+              Projects Completed
+            </span>
           </div>
-          <div className="border-gray-600 border-b md:border-b-0 md:border-r align-middle text-center justify-center flex flex-col py-4">
-            <span className="font-bold text-3xl">15+</span>
-            <h6 className="font-thin text-sm mt-2">Successful Year</h6>
+          <div className="stat-card rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-3 sm:p-5 text-center flex flex-col items-center justify-center min-h-24 sm:min-h-28 w-full">
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              15+
+            </span>
+            <span className="block mt-1 sm:mt-2 text-xs sm:text-sm text-gray-300">
+              Successful Years
+            </span>
           </div>
-          <div className="border-gray-600 border-b md:border-b-0 md:border-r align-middle text-center justify-center flex flex-col py-4">
-            <span className="font-bold text-3xl">98%</span>
-            <h6 className="font-thin text-sm mt-2">Client Retention</h6>
+          <div className="stat-card rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-3 sm:p-5 text-center flex flex-col items-center justify-center min-h-24 sm:min-h-28 w-full">
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              98%
+            </span>
+            <span className="block mt-1 sm:mt-2 text-xs sm:text-sm text-gray-300">
+              Client Retention
+            </span>
           </div>
-          <div className="align-middle text-center justify-center flex flex-col py-4">
-            <span className="font-bold text-3xl">30+</span>
-            <h6 className="font-thin text-sm mt-2">Countries</h6>
+          <div className="stat-card rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-3 sm:p-5 text-center flex flex-col items-center justify-center min-h-24 sm:min-h-28 w-full">
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              30+
+            </span>
+            <span className="block mt-1 sm:mt-2 text-xs sm:text-sm text-gray-300">
+              Countries
+            </span>
           </div>
-        </div>
+        </section>
       </div>
     </>
   );

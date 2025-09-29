@@ -1,11 +1,11 @@
 @import "tailwindcss";
 .bg-1 {
-  background-image: url('/images/bg.jpg');
+  background-image: url("/images/bg.jpg");
 }
-.hidesidemenu{
+.hidesidemenu {
   right: -100vw;
 }
-.opensidemenu{
+.opensidemenu {
   right: -100%;
 }
 @keyframes fade-in {
@@ -15,5 +15,23 @@
   to {
     opacity: 1;
   }
-  
+}
+
+/* Hide scrollbars but keep scrolling enabled */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Utility for forcing hidden scrollbar on any element (including nested) */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+.hide-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }

@@ -5,11 +5,11 @@ import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: {
-    default: "Apsarify — Building the Future of Technology",
-    template: "%s | Apsarify",
+    default: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
+    template: "%s | APSARIFY",
   },
   description:
-    "Apsarify Corporation — full-stack web & software solutions. Web, Cloud, AI & UI/UX built.",
+    "APSARIFY — Elevate your vision. We craft Web, Cloud, AI & UI/UX solutions that ignite tomorrow's innovation.",
   keywords: [
     "Apsarify",
     "Apsarify Corporation",
@@ -21,19 +21,19 @@ export const metadata = {
     "Django",
     "tech",
   ],
-  authors: [{ name: "Abhinandan Subedi", url: "https://aps.org.np" }],
+  authors: [{ name: "Abhinandan Subedi", url: "https://apsarify.tech" }],
   creator: "Abhinandan Subedi",
 
   // Open Graph (used by Facebook, LinkedIn, etc.)
   openGraph: {
-    title: "Apsarify — Building the Future of Technology",
+    title: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
     description:
-      "Apsarify builds scalable web apps and cloud solutions. Contact us for product development, design, and cloud automation.",
-    url: "https://aps.org.np/",
-    siteName: "Apsarify",
+      "Elevate your vision with APSARIFY. We build scalable Web, Cloud, AI & UI/UX solutions.",
+    url: "https://apsarify.tech/",
+    siteName: "APSARIFY",
     images: [
       {
-        url: "https://aps.org.np/og-image.png", // <-- replace with your OG image
+        url: "https://apsarify.tech/images/ABOUT.png",
         width: 1200,
         height: 630,
         alt: "Apsarify — Building the Future",
@@ -46,10 +46,10 @@ export const metadata = {
   // // Twitter card
   // twitter: {
   //   card: "summary_large_image",
-  //   title: "Apsarify — Building the Future of Technology",
+  //   title: "APSARIFY — ELEVATE YOUR VISION, IGNITE TOMORROW'S INNOVATION.",
   //   description:
-  //     "Apsarify builds scalable web apps and cloud solutions. Contact us for product development & design.",
-  //   images: ["https://aps.org.np/og-image.png"], // <-- same OG image recommended
+  //     "Elevate your vision with APSARIFY. We build scalable Web, Cloud, AI & UI/UX solutions.",
+  //   images: ["https://apsarify.tech/og-image.png"], // <-- same OG image recommended
   //   creator: "@YourTwitterHandle", // <-- replace with your Twitter handle or remove
   // },
 
@@ -62,7 +62,7 @@ export const metadata = {
 
   // sitemap / canonical alternative URLs
   alternates: {
-    canonical: "https://aps.org.np/",
+    canonical: "https://apsarify.tech/",
   },
 
   // robots configuration
@@ -99,9 +99,9 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Apsarify",
-              url: "https://apsarify.vercel.app/",
-              logo: "https://apsarify.vercel.app/logo.png",
+              name: "APSARIFY",
+              url: "https://apsarify.tech/",
+              logo: "https://apsarify.tech/favicon.png",
               sameAs: [
                 "https://www.facebook.com/your-profile",
                 "https://www.instagram.com/your-profile",
