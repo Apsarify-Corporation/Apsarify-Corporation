@@ -6,11 +6,11 @@ import Navbar from "@/components/Navbar";
 export const metadata = {
   title: {
     default:
-      "APSARIFY.tech — Elevate Your Vision | Web, Cloud, AI & UI/UX Engineering",
+      "APSARIFY — Elevate Your Vision | Web, Cloud, AI & UI/UX Engineering",
     template: "%s | APSARIFY.tech",
   },
   description:
-    "APSARIFY.tech is a Nepal-based technology partner delivering high-performance Web Apps, Cloud architecture, AI integration, Mobile & UI/UX solutions that scale globally.",
+    "APSARIFY is a Nepal-based technology partner delivering high-performance Web Apps, Cloud architecture, AI integration, Mobile & UI/UX solutions that scale globally.",
   keywords: [
     "Apsarify",
     "Apsarify.tech",
